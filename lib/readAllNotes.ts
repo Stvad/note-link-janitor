@@ -27,9 +27,6 @@ async function readNote(notePath: string): Promise<Note> {
   const parseTree = processor.parse(
     noteContents.replace(/#([\w|-]+)/g, "[[$1]]").replace("#[[", "[[")
   ) as MDAST.Root;
-  console.log(
-    noteContents.replace(/#([\w|-]+)/g, "[[$1]]").replace("#[[", "[[")
-  );
   
   const headingNode = await headingFinder.run(parseTree);
   // let title;

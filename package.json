@@ -1,6 +1,6 @@
 {
-  "name": "@andymatuschak/note-link-janitor",
-  "version": "0.0.1",
+  "name": "@houshuang/note-link-janitor",
+  "version": "0.0.4",
   "author": "Andy Matuschak",
   "main": "out/index.js",
   "license": "MIT",

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+require("util").inspect.defaultOptions.depth = null;
 import * as fs from "fs";
 import * as graph from "pagerank.js";
 import * as path from "path";
@@ -11,11 +12,12 @@ import updateBacklinks from "./lib/updateBacklinks";
 (async () => {
   const baseNotePath = process.argv[2];
   if (!baseNotePath || baseNotePath === "--help") {
-    console.log("Usage: note-link-janitor [NOTE_DIRECTORY]");
+    console.log("Usage: note-link-janitor [NOTE_DIRECTORY]\nVersion: @houshuang's fork for Roam, 0.0.4");
     return;
   }
 
   const notes = await readAllNotes(baseNotePath);
+  console.log('notes', notes)
   const linkMap = createLinkMap(Object.values(notes));
 
   // Sort by PageRank
